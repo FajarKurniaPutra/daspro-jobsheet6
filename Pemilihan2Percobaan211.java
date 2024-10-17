@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class Pemilihan2Percobaan211 {
     public static void main(String[] args) {
         Scanner input11 = new Scanner(System.in);
-        String member;
+        String member, qris;
         int menu, harga, jumlah_beli;
         Double diskon, total_bayar;
 
@@ -20,6 +20,9 @@ public class Pemilihan2Percobaan211 {
         System.out.println("Apakah punya member (y/n)? = ");
         member = input11.nextLine();
         System.out.println("-------------------------------------");
+        System.out.println("Apakah ingin melakukan qris (y/n)? = ");
+        qris = input11.nextLine();
+        System.out.println("-------------------------------------");
 
         if (member.equalsIgnoreCase("y")) {
             diskon = 0.10;
@@ -27,63 +30,59 @@ public class Pemilihan2Percobaan211 {
             if (menu == 1) {
                 harga = 12000;
                 System.out.println("Harga Kopi Rp." + harga);
-                System.out.println("-------------------------------------");
-                System.out.print("Masukkan Jumlah Yang Ingin Dibeli = ");
-                jumlah_beli = input11.nextInt();
-                total_bayar = (harga * jumlah_beli) - (harga*jumlah_beli*diskon);
-                System.out.println("-------------------------------------");
-                System.out.println("Total bayar setelah diskon Rp." + total_bayar);
             } else if (menu == 2) {
                 harga = 10000;
                 System.out.println("Harga Teh Rp." + harga);
-                System.out.println("-------------------------------------");
-                System.out.print("Masukkan Jumlah Yang Ingin Dibeli = ");
-                jumlah_beli = input11.nextInt();
-                total_bayar = (harga * jumlah_beli) - (harga*jumlah_beli*diskon);
-                System.out.println("-------------------------------------");
-                System.out.println("Total bayar setelah diskon Rp." + total_bayar);
             } else if (menu == 3) {
                 harga = 20000;
                 System.out.println("Harga Roti Rp." + harga);
-                System.out.println("-------------------------------------");
-                System.out.print("Masukkan Jumlah Yang Ingin Dibeli = ");
-                jumlah_beli = input11.nextInt();
-                total_bayar = (harga * jumlah_beli) - (harga*jumlah_beli*diskon);
-                System.out.println("-------------------------------------");
-                System.out.println("Total bayar setelah diskon Rp." + total_bayar);
             } else {
                 System.out.println("menu tidak tersedia");
+                return;
             }
+                if (qris.equalsIgnoreCase("y")) {
+                    System.out.println("-------------------------------------");
+                    System.out.print("Masukkan Jumlah Yang Ingin Dibeli = ");
+                    jumlah_beli = input11.nextInt();
+                    total_bayar = (harga * jumlah_beli) - (harga*jumlah_beli*diskon) - 1000;
+                    System.out.println("-------------------------------------");
+                    System.out.println("Total bayar setelah diskon Rp." + total_bayar);
+                } else {
+                    System.out.println("-------------------------------------");
+                    System.out.print("Masukkan Jumlah Yang Ingin Dibeli = ");
+                    jumlah_beli = input11.nextInt();
+                    total_bayar = (harga * jumlah_beli) - (harga*jumlah_beli*diskon);
+                    System.out.println("-------------------------------------");
+                    System.out.println("Total bayar setelah diskon Rp." + total_bayar);
+                }
         } else if (member.equalsIgnoreCase("n")) {
             if (menu == 1) {
                 harga = 12000;
                 System.out.println("Harga Kopi Rp." + harga);
-                System.out.println("-------------------------------------");
-                System.out.print("Masukkan Jumlah Yang Ingin Dibeli = ");
-                jumlah_beli = input11.nextInt();
-                total_bayar = (double) harga * jumlah_beli;
-                System.out.println("-------------------------------------");
-                System.out.println("Total bayar Rp." + total_bayar);
             } else if (menu == 2) {
                 harga = 10000;
                 System.out.println("Harga Teh Rp." + harga);
-                System.out.println("-------------------------------------");
-                System.out.print("Masukkan Jumlah Yang Ingin Dibeli = ");
-                jumlah_beli = input11.nextInt();
-                total_bayar = (double) harga * jumlah_beli;
-                System.out.println("-------------------------------------");
-                System.out.println("Total bayar = " + total_bayar);
             } else if (menu == 3) {
                 harga = 20000;
                 System.out.println("Harga Roti Rp." + harga);
+            } else {
+                System.out.println("Member tidak tersedia");
+                return;
+            }
+            if (qris.equalsIgnoreCase ("y")) {
+                System.out.println("-------------------------------------");
+                System.out.print("Masukkan Jumlah Yang Ingin Dibeli = ");
+                jumlah_beli = input11.nextInt();
+                total_bayar = (double) harga * jumlah_beli - 1000;
+                System.out.println("-------------------------------------");
+                System.out.println("Total bayar Rp." + total_bayar);
+            } else {
                 System.out.println("-------------------------------------");
                 System.out.print("Masukkan Jumlah Yang Ingin Dibeli = ");
                 jumlah_beli = input11.nextInt();
                 total_bayar = (double) harga * jumlah_beli;
                 System.out.println("-------------------------------------");
                 System.out.println("Total bayar Rp." + total_bayar);
-            } else {
-                System.out.println("Member tidak tersedia");
             }
         }
         System.out.println("-------------------------------------");
